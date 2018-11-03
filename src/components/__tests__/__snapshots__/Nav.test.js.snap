@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav shows the correct snapshot tree for the Nav component 1`] = `
+<div
+  className="css-1b2b698"
+>
+  <div
+    className="css-1bbbaa"
+    height="100%"
+  >
+    <p>
+      Hi! undefined
+    </p>
+    <button
+      className="css-bjolns"
+      onClick={[Function]}
+    >
+      Logout
+    </button>
+  </div>
+</div>
+`;

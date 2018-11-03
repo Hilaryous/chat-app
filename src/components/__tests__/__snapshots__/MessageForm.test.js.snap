@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageForm shows the correct snapshot tree for the MessageForm component 1`] = `null`;

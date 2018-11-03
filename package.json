@@ -3,18 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "emotion": "^9.2.12",
+    "firebase": "^5.5.7",
+    "ramda": "^0.25.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1"
+    "react-emotion": "^9.2.12",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.0",
+    "recompose": "^0.30.0"
+  },
+  "devDependencies": {
+    "eslint-config-hilaryous": "1.0.0",
+    "react-test-renderer": "^16.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow ./src",
+    "lint": "eslint ./src --color"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "hilaryous"
   },
   "browserslist": [
     ">0.2%",

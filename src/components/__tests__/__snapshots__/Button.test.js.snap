@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button shows the correct snapshot tree for the Button component 1`] = `
+<button
+  className="css-bjolns"
+>
+  send
+</button>
+`;

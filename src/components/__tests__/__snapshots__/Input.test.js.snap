@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input shows the correct snapshot tree for the Input component 1`] = `
+<input
+  className="css-zof107"
+  onChange={[Function]}
+  placeholder="Message"
+  type="text"
+  value="hi"
+/>
+`;

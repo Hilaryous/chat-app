@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login shows the correct snapshot tree for the Login component 1`] = `
+<div
+  className="css-3z75l1"
+>
+  <div
+    className="css-16iqw5x"
+  >
+    chatterbox
+  </div>
+  <form
+    className="css-15dx3ku"
+    onSubmit={[Function]}
+  >
+    <input
+      className="css-zof107"
+      name="email"
+      onChange={[Function]}
+      placeholder="Email"
+      value=""
+    />
+    <input
+      autoComplete="current-password"
+      className="css-zof107"
+      name="password"
+      onChange={[Function]}
+      placeholder="Password"
+      type="password"
+      value=""
+    />
+    <button
+      className="css-bjolns"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
+`;

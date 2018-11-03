@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat shows the correct snapshot tree for the Chat component 1`] = `
+<div
+  className="css-gnrrs"
+>
+  <div
+    className="css-in3yi3"
+  />
+  <button
+    className="css-bjolns"
+    onClick={[Function]}
+    type="button"
+  >
+    Go to Chat
+  </button>
+</div>
+`;
