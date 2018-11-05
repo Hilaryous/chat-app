@@ -1,3 +1,8 @@
+# Chat App
+This is a bare bones chat app
+
+It is hosted [here](https://chatterbox-77303.firebaseapp.com/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
