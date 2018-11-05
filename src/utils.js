@@ -5,13 +5,13 @@ import filter from 'ramda/src/filter'
 import map from 'ramda/src/map'
 import path from 'ramda/src/path'
 
-export const getUserId = (currentUserId, users) => compose(
+export const getUserId = (currentUserId: string, users: {}) => compose(
   path(['0', 'id']),
   filter(item => (item.uid === currentUserId)),
   values,
 )(users)
 
-export const getChats = (currentUserId, users, chats) => compose(
+export const getChats = (currentUserId: string, users: {}, chats: {}) => compose(
   map((item) => {
     let user
     if (item.fromUser === currentUserId) {
@@ -25,12 +25,17 @@ export const getChats = (currentUserId, users, chats) => compose(
   values,
 )(chats)
 
-export const getMessages = (currentChatId, users, messages) => compose(
+export const getMessages = (
+  currentChatId: ?string,
+  users: {},
+  messages: {},
+) => compose(
   map((item) => {
     const user = users[item.userId]
     return { ...item, userEmail: user.email }
   }),
   filter(item => item.chatId === currentChatId),
+  values,
 )(messages)
 
 export default undefined

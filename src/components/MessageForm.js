@@ -6,7 +6,7 @@ import Input from './Input'
 import Button from './Button'
 
 type Props = {
-  addMessageToList: () => void,
+  addMessageToList: ({}) => void,
   currentChatId: string,
   currentUser: {
     id: string,

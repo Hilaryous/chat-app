@@ -5,13 +5,13 @@ import AppContext from '../context'
 import Button from './Button'
 import Input from './Input'
 
+type Props = {
+  signInUser: (string, string) => void,
+}
+
 type State = {
   email: string,
   password: string,
-}
-
-type Props = {
-  signInUser: () => void,
 }
 
 class LoginForm extends PureComponent<Props, State> {

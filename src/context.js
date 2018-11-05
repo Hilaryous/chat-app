@@ -3,10 +3,10 @@ import React, { type Node, PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import firebase from './firebase'
 import { getChats, getMessages, getUserId } from './utils'
-import ChatType from './types/Chat'
-import MessageType from './types/Message'
-import UserType from './types/User'
+import type { ChatType } from './types/Chat'
+import type { UserType } from './types/User'
 
+// $FlowFixMe
 const Context = React.createContext()
 
 type Props = {
@@ -18,10 +18,10 @@ type Props = {
 
 type State = {
   chats: Array<ChatType>,
-  currentChatId: string,
+  currentChatId: ?string,
   currentUser: UserType,
-  messages: Array<MessageType>,
-  users: UserType,
+  messages: {},
+  users: {},
 }
 
 class AppContextProvider extends PureComponent<Props, State> {
@@ -34,8 +34,12 @@ class AppContextProvider extends PureComponent<Props, State> {
   state = {
     chats: [],
     currentChatId: undefined,
-    currentUser: {},
-    messages: [],
+    currentUser: {
+      email: '',
+      id: '',
+      uid: '',
+    },
+    messages: {},
     users: {},
   };
 
@@ -54,7 +58,7 @@ class AppContextProvider extends PureComponent<Props, State> {
 
   setUser = (user) => {
     if (user != null) {
-      this.setState(() => ({ currentUser: { uid: user.uid, email: user.email } }))
+      this.setState(() => ({ currentUser: { id: '', uid: user.uid, email: user.email } }))
     }
   }
 
@@ -116,10 +120,7 @@ class AppContextProvider extends PureComponent<Props, State> {
       .on('value', (message) => {
         const messageVal = message.val()
         if (messageVal) {
-          this.setState(() => {
-            const messages = Object.values(messageVal)
-            return { messages }
-          })
+          this.setState(() => ({ messages: messageVal }))
         }
       })
   }

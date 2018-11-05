@@ -4,4 +4,5 @@ export type MessageType = {
   chatId: string,
   userId: string,
   content: string,
+  userEmail?: string,
 }

@@ -3,7 +3,7 @@ import React from 'react'
 import map from 'ramda/src/map'
 import AppContext from '../context'
 import Message from './Message'
-import type MessageType from '../types/Message'
+import type { MessageType } from '../types/Message'
 
 type Props = {
   list: Array<MessageType>

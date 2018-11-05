@@ -10,7 +10,7 @@ Array [
       height="100%"
     >
       <p>
-        Hi! undefined
+        Hi! 
       </p>
       <button
         className="css-bjolns"

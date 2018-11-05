@@ -3,7 +3,7 @@ import React from 'react'
 import map from 'ramda/src/map'
 import AppContext from '../context'
 import Chat from './Chat'
-import type ChatType from '../types/Chat'
+import type { ChatType } from '../types/Chat'
 
 type Props = {
   list: Array<ChatType>,

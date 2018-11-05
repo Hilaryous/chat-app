@@ -1,12 +1,12 @@
 // @flow
 import React, { PureComponent } from 'react'
 import styled from 'react-emotion'
-import type ChatType from '../types/Chat'
+import type { ChatType } from '../types/Chat'
 import Button from './Button'
 
 type Props = {
   chat: ChatType,
-  selectChat: () => void,
+  selectChat: (string) => void,
 }
 
 class Chat extends PureComponent<Props> {
@@ -18,7 +18,7 @@ class Chat extends PureComponent<Props> {
   render() {
     const { chat } = this.props
     return (
-      <Container id="chat">
+      <Container>
         <User>
           {chat.userEmail}
         </User>

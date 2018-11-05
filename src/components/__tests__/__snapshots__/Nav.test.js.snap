@@ -9,7 +9,7 @@ exports[`Nav shows the correct snapshot tree for the Nav component 1`] = `
     height="100%"
   >
     <p>
-      Hi! undefined
+      Hi! 
     </p>
     <button
       className="css-bjolns"

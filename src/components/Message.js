@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import styled from 'react-emotion'
-import type MessageType from '../types/Message'
+import type { MessageType } from '../types/Message'
 
 type Props = {
   message: MessageType,
