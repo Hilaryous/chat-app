@@ -11,11 +11,11 @@ const Main = () => (
     <Fragment>
       <Nav />
       <Container>
-        <ChatList />
         <div>
           <MessageList />
           <MessageForm />
         </div>
+        <ChatList />
       </Container>
     </Fragment>
   )
@@ -28,5 +28,8 @@ export default Main
 
 const Container = styled('div')({
   display: 'grid',
-  gridTemplateColumns: '1fr 3fr',
+  gridTemplateColumns: '1fr',
+  '@media only screen and (min-width: 35em)': {
+    gridTemplateColumns: '3fr 1fr',
+  },
 })

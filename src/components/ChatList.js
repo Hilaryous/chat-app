@@ -18,8 +18,12 @@ const ChatList = ({ selectChat, list }: Props) => (
 
 export default () => (
   <AppContext.Consumer>
-    {({ actions: { selectChat }, chats }) => <ChatList selectChat={selectChat} list={chats} />}
+    {({ actions: { selectChat }, chats, currentUser }) => (
+      <ChatList
+        selectChat={selectChat}
+        list={chats}
+        currentUser={currentUser}
+      />
+    )}
   </AppContext.Consumer>
 )
-
-// --------------------------

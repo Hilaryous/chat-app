@@ -3,7 +3,6 @@ import React, { type Node, PureComponent } from 'react'
 import { withRouter } from 'react-router-dom'
 import firebase from './firebase'
 import { getChats, getMessages, getUserId } from './utils'
-import type { ChatType } from './types/Chat'
 import type { UserType } from './types/User'
 
 // $FlowFixMe
@@ -17,7 +16,7 @@ type Props = {
 }
 
 type State = {
-  chats: Array<ChatType>,
+  chats: {},
   currentChatId: ?string,
   currentUser: UserType,
   messages: {},
@@ -32,7 +31,7 @@ class AppContextProvider extends PureComponent<Props, State> {
   usersRef = firebase.database().ref().child('users');
 
   state = {
-    chats: [],
+    chats: {},
     currentChatId: undefined,
     currentUser: {
       email: '',
@@ -131,11 +130,7 @@ class AppContextProvider extends PureComponent<Props, State> {
       .on('value', (chat) => {
         const chatVal = chat.val()
         if (chatVal) {
-          this.setState(({ currentUser, users }) => {
-            const currentUserId = getUserId(currentUser.uid, users)
-            const chats = getChats(currentUserId, users, chatVal)
-            return { currentUser: { ...currentUser, id: currentUserId }, chats }
-          })
+          this.setState(() => ({ chats: chatVal }))
         }
       })
   }
@@ -153,13 +148,16 @@ class AppContextProvider extends PureComponent<Props, State> {
 
   render() {
     const { children } = this.props
-    const { currentChatId, users, messages } = this.state
+    const { chats, currentUser, currentChatId, users, messages } = this.state
+    const currentUserId = getUserId(currentUser.uid, users)
     const chatMessages = getMessages(currentChatId, users, messages)
+    const currentChats = getChats(currentUserId, users, chats)
     return (
       <Context.Provider
         value={{
           ...this.state,
           messages: chatMessages,
+          chats: currentChats,
           actions: {
             addMessageToList: this.addMessageToList,
             signInUser: this.signInUser,
